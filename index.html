@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Navigation with toggle</title>
+        <style>
+            #nav {
+                overflow: hidden;
+                background-color: white;
+                padding: 0px;
+            }
+            #nav-list {
+                display: none;
+                
+            }
+            #nav-list.active {
+                display: block;
+                color: black;
+                font-size: 20px;
+                gap: 20px;
+            }
+            li {
+                list-style-type: none;
+                margin: 30px;
+                text-align: center;
+                color: black;
+            }
+            #login {
+                background-color: rgb(63, 18, 224);
+                padding: 10px;
+                border-radius: 5px;
+            }
+            #login a {
+                color: white;
+            }
+            #login:hover {
+                background-color: rgb(65, 50, 33);
+            }
+            a {
+                text-decoration: none;
+                color: black;
+                align-self: auto;
+            }
+            a:hover {
+                color: white;
+                background-color: rgb(65, 50, 33);
+                border-radius: 5px;
+                padding: 10px;
+            }
+            div { 
+                text-align: left;
+            }
+            #toggle-button {
+                font-size: 30px;
+                background-color: white;
+                color: black;
+                border: none;
+                cursor: pointer;
+            }
+            #toggle-button:hover {
+                background-color: rgb(65, 50, 33);
+                color: white;
+            }
+            #toggle-button:active
+        </style>
+    </head>
+    <body>
+        <div>
+             <button id="toggle-button">☰</button>
+        <nav id="nav">
+            <ul id="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li id="login"><a href="#">Login</a></li>
+            </ul>
+        </nav>   
+    </div>
+    </body>
+    <script>
+        const toggleButton = document.getElementById('toggle-button');
+        const navList = document.getElementById('nav-list');
+
+        toggleButton.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        toggleButton.textContent === '☰' ? '✖' : '☰';
+        });
+    </script>
+</html>
