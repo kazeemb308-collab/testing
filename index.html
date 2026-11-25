@@ -2,7 +2,22 @@
 <html>
     <head>
         <title>Navigation with toggle</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
         <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: rgba(65, 50, 33, 0.507);
+            }
+            nav {
+                display: flex;
+                justify-content: space-between;
+                background-color: rgba(4, 4, 71, 0.733);
+                display: flex;
+                align-items: center;
+            }
             #nav {
                 overflow: hidden;
                 background-color: white;
@@ -51,22 +66,53 @@
             }
             #toggle-button {
                 font-size: 30px;
-                background-color: white;
-                color: black;
+                background-color: rgba(0, 0, 0, 0.411);
+                color: white;
                 border: none;
                 cursor: pointer;
+                margin-left:auto;
+                margin-right: 20px;
+                padding: 8px 15px;
+                border-radius: 5px;
             }
             #toggle-button:hover {
                 background-color: rgb(65, 50, 33);
                 color: white;
             }
-            #toggle-button:active
+            .logo {
+                color: white;
+                margin-left: 20px;
+            }
+            .greeting {
+                color: 071B33;
+                font-size: 100px;
+                margin-left: 40px;
+            }
+            .vex {
+                color: 071B33;
+                font-size: 50px;
+                margin-left: 70px;
+                margin-top: -60px;
+                margin-bottom: auto;
+            }
+            #bami-apps-link {
+                display: inline-block;
+                margin-left: 70px;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: rgb(63, 18, 224);
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            }
         </style>
     </head>
     <body>
-        <div>
-             <button id="toggle-button">☰</button>
-        <nav id="nav">
+        <nav>
+                <h1 class="logo">Just Practicing</h1>
+            <button id="toggle-button">☰</button>
+        </nav>
+        <div id="nav">
             <ul id="nav-list">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -74,8 +120,12 @@
                 <li><a href="#">Contact</a></li>
                 <li id="login"><a href="#">Login</a></li>
             </ul>
-        </nav>   
-    </div>
+        </div>
+        <div>
+           <p class="greeting"><b>Welcome Boss!</b></p>
+           <p class="vex">No vex say e dey come late 😂</p>
+        </div>
+        <a id="bami-apps-link" href="https://bamiweb.vercel.app" target="_blank">Visit BAMI Apps &emsp;  ➜ </a>
     </body>
     <script>
         const toggleButton = document.getElementById('toggle-button');
@@ -83,7 +133,7 @@
 
         toggleButton.addEventListener('click', () => {
             navList.classList.toggle('active');
-        toggleButton.textContent === '☰' ? '✖' : '☰';
+            toggleButton.textContent = toggleButton.textContent === '☰' ? '✖' : '☰';
         });
     </script>
 </html>
